@@ -1,99 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ToughStyle — Tienda GYM</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToughStyle - Ropa de Gym</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <a class="brand" href="#">Tough<span>Style</span></a>
 
-      <div class="search-wrap">
-        <input id="searchInput" type="search" placeholder="Buscar producto, p. ej. 'legging'..." />
-      </div>
+    <!-- ==== Encabezado ==== -->
+    <header>
+        <h1>ToughStyle</h1>
+        <nav>
+            <select id="categoryFilter">
+                <option value="all">Todas las categorías</option>
+                <option value="camisetas">Camisetas</option>
+                <option value="pantalones">Pantalones</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <button id="cartBtn">🛒 Carrito <span id="cartCount">0</span></button>
+        </nav>
+    </header>
 
-      <nav class="controls">
-        <select id="filterCategory">
-          <option value="all">Todas las categorías</option>
-          <option value="mujer">Mujer</option>
-          <option value="hombre">Hombre</option>
-          <option value="accesorios">Accesorios</option>
-        </select>
+    <!-- ==== Lista de productos ==== -->
+    <main id="productsGrid">
+        <!-- Productos generados dinámicamente desde script.js -->
+    </main>
 
-        <button id="cartBtn" class="btn cart-btn" aria-label="Abrir carrito">
-          🛒 <span id="cartCount">0</span>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h1>Ropa deportiva cómoda y funcional</h1>
-        <p>Diseñada para entrenamientos intensos y estilo diario. Envío rápido y devoluciones fáciles.</p>
-        <a id="ctaShop" class="btn primary">Ir al catálogo</a>
-      </div>
-      <img src="https://images.unsplash.com/photo-1554284126-aa88f22d6d40?auto=format&fit=crop&w=1200&q=80" alt="Ropa gimnasio" />
-    </section>
-
-    <section class="products-section">
-      <h2>Catálogo</h2>
-      <div id="productsGrid" class="products-grid"></div>
-    </section>
-  </main>
-
-  <!-- Modal de producto -->
-  <div id="productModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal" aria-label="Cerrar">&times;</button>
-      <div class="modal-body">
-        <img id="modalImg" src="" alt="">
-        <div class="modal-info">
-          <h3 id="modalTitle"></h3>
-          <p id="modalDesc"></p>
-          <p class="price" id="modalPrice"></p>
-          <label>
-            Cantidad:
-            <input id="modalQty" type="number" min="1" value="1">
-          </label>
-          <button id="addToCartBtn" class="btn primary">Agregar al carrito</button>
+    <!-- ==== Modal de producto ==== -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+            <button id="addToCartBtn">Agregar al carrito</button>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Carrito lateral -->
-  <aside id="cartSidebar" class="cart-sidebar" aria-hidden="true">
-    <div class="cart-header">
-      <h3>Carrito</h3>
-      <button id="closeCart">Cerrar</button>
-    </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer">
-      <div class="totals">
-        <span>Total:</span> <strong id="cartTotal">$0.00</strong>
-      </div>
-      <div class="cart-actions">
-        <button id="clearCart" class="btn">Vaciar</button>
-        <button id="checkoutBtn" class="btn primary">Checkout</button>
-      </div>
-    </div>
-  </aside>
+    <!-- ==== Carrito lateral ==== -->
+    <aside id="cartSidebar">
+        <header>
+            <h2>Carrito</h2>
+            <span class="close">&times;</span>
+        </header>
+        <div id="cartItems"></div>
+        <div id="cartFooter">
+            <p>Total: <span id="cartTotal">$0</span></p>
+            <button id="clearCart">Vaciar carrito</button>
+            <button id="checkoutBtn">Finalizar compra</button>
+        </div>
+    </aside>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> ToughStyle — Ropa deportiva. Hecho con ❤️.</p>
-    </div>
-  </footer>
+    <!-- ==== Notificación Toast ==== -->
+    <div id="toast">Producto agregado</div>
 
-  <div id="toast" class="toast" aria-hidden="true"></div>
+    <!-- ==== Footer ==== -->
+    <footer>
+        <p>&copy; 2025 ToughStyle - Ropa de Gym</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <!-- ==== Script ==== -->
+    <script src="script.js"></script>
 </body>
 </html>
