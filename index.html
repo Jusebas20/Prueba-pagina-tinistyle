@@ -1,68 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToughStyle - Ropa de Gym</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToughStyle - Ropa de Gym</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ==== Encabezado ==== -->
-    <header>
-        <h1>ToughStyle</h1>
-        <nav>
-            <select id="categoryFilter">
-                <option value="all">Todas las categorías</option>
-                <option value="camisetas">Camisetas</option>
-                <option value="pantalones">Pantalones</option>
-                <option value="accesorios">Accesorios</option>
-            </select>
-            <input type="text" id="searchInput" placeholder="Buscar productos...">
-            <button id="cartBtn">🛒 Carrito <span id="cartCount">0</span></button>
-        </nav>
-    </header>
+<header>
+  <h1>ToughStyle</h1>
+  <button id="verCarrito">🛒 Carrito (<span id="contador">0</span>)</button>
+</header>
 
-    <!-- ==== Lista de productos ==== -->
-    <main id="productsGrid">
-        <!-- Productos generados dinámicamente desde script.js -->
-    </main>
-
-    <!-- ==== Modal de producto ==== -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="modalImage" src="" alt="">
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <p id="modalPrice"></p>
-            <button id="addToCartBtn">Agregar al carrito</button>
-        </div>
+<main>
+  <section class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250.png?text=Leggings+Gym" alt="Leggings">
+      <h3>Leggings Deportivos</h3>
+      <p>Comodidad y estilo para tus entrenamientos.</p>
+      <div class="price">$80.000 COP</div>
+      <button onclick="agregarAlCarrito('Leggings Deportivos', 80000)">Agregar</button>
     </div>
-
-    <!-- ==== Carrito lateral ==== -->
-    <aside id="cartSidebar">
-        <header>
-            <h2>Carrito</h2>
-            <span class="close">&times;</span>
-        </header>
-        <div id="cartItems"></div>
-        <div id="cartFooter">
-            <p>Total: <span id="cartTotal">$0</span></p>
-            <button id="clearCart">Vaciar carrito</button>
-            <button id="checkoutBtn">Finalizar compra</button>
-        </div>
-    </aside>
-
-    <!-- ==== Notificación Toast ==== -->
-    <div id="toast">Producto agregado</div>
-
-    <!-- ==== Footer ==== -->
-    <footer>
-        <p>&copy; 2025 ToughStyle - Ropa de Gym</p>
-    </footer>
-
-    <!-- ==== Script ==== -->
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250.png?text=Top+Gym" alt="Top">
+      <h3>Top Deportivo</h3>
+      <p>Ligero, transpirable y resistente.</p>
+      <div class="price">$50.000 COP</div>
+      <button onclick="agregarAlCarrito('Top Deportivo', 50000)">Agregar</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250.png?text=Sudadera+Gym" alt="Sudadera">
+      <h3>Sudadera ToughStyle</h3>
+      <
