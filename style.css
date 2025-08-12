@@ -1,18 +1,17 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f7f7f7;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Encabezado */
 header {
+    background-color: #111;
+    color: #fff;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #111;
-    padding: 10px 20px;
-    color: white;
 }
 
 .logo-container {
@@ -22,17 +21,14 @@ header {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+    height: 50px;
+    width: auto;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -42,94 +38,53 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff4c4c;
+    color: #ff4081;
 }
 
-/* Secciones */
-.section {
-    padding: 40px 20px;
+.productos {
+    padding: 30px;
     text-align: center;
-}
-
-/* Productos */
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
 }
 
 .producto {
     background: white;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-.producto:hover {
-    transform: translateY(-5px);
+    margin: 15px;
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .producto img {
-    width: 100%;
-    border-radius: 10px;
+    width: 200px;
+    border-radius: 8px;
 }
 
-.producto h3 {
-    margin: 10px 0;
-}
-
-.producto p {
-    color: #ff4c4c;
-    font-weight: bold;
-}
-
-.producto button {
-    background: #ff4c4c;
+button {
+    background-color: #ff4081;
     color: white;
+    padding: 10px 15px;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
     cursor: pointer;
-}
-
-.producto button:hover {
-    background: #e63b3b;
-}
-
-/* Formulario */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-}
-
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
-form button {
-    background: #ff4c4c;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+button:hover {
+    background-color: #e73370;
 }
 
-form button:hover {
-    background: #e63b3b;
+.carrito {
+    background: #fff;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Footer */
 footer {
     background: #111;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
