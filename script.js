@@ -1,31 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Página ToughStyle cargada correctamente.");
+let carrito = [];
+let total = 0;
 
-    // ✅ Logo dinámico (por si quieres cambiarlo fácilmente desde JS)
-    const logoContainer = document.querySelector(".logo-container");
-    if (logoContainer) {
-        const logoImg = logoContainer.querySelector(".logo");
-        if (logoImg) {
-            logoImg.src = "logo-pagina.jpg"; // Nombre exacto del archivo que subiste a tu repo
-            logoImg.alt = "Logo ToughStyle";
-        }
-    }
+function agregarAlCarrito(producto, precio) {
+    carrito.push({ producto, precio });
+    total += precio;
+    actualizarCarrito();
+}
 
-    // 🔹 Ejemplo: Acción de botones de compra
-    const botonesCompra = document.querySelectorAll(".producto button");
-    botonesCompra.forEach(boton => {
-        boton.addEventListener("click", () => {
-            alert("Gracias por tu compra en ToughStyle 🏋️‍♂️💪");
-        });
+function actualizarCarrito() {
+    const lista = document.getElementById('lista-carrito');
+    lista.innerHTML = '';
+    carrito.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.producto} - $${item.precio.toLocaleString()} COP`;
+        lista.appendChild(li);
     });
+    document.getElementById('total').textContent = `Total: $${total.toLocaleString()} COP`;
+}
 
-    // 🔹 Ejemplo: Validación de formulario de contacto
-    const form = document.querySelector("form");
-    if (form) {
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            alert("Gracias por tu mensaje. Nos pondremos en contacto pronto.");
-            form.reset();
-        });
+function finalizarCompra() {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
     }
-});
+    alert(`Gracias por tu compra en ToughStyle. Total: $${total.toLocaleString()} COP`);
+    carrito = [];
+    total = 0;
+    actualizarCarrito();
+}
