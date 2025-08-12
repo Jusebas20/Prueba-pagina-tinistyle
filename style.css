@@ -1,230 +1,115 @@
-/* ====== Estilos globales ====== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General */
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f8f8;
+  background-color: white;
+  background-image: url('https://i.pinimg.com/originals/99/12/02/991202156833c55645a03f05850c16c5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: #333;
-  line-height: 1.6;
 }
 
-/* ====== Encabezado ====== */
 header {
-  background-color: #111;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
   padding: 1rem 2rem;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo {
   height: 50px;
-  margin-right: 10px;
+  width: auto;
   border-radius: 8px;
 }
 
 header h1 {
   font-size: 1.8rem;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-}
-
-nav ul li {
-  margin-left: 20px;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #ff4081;
+  text-decoration: underline;
 }
 
-/* ====== Sección hero ====== */
-.hero {
-  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') center/cover no-repeat;
-  color: #fff;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-text {
-  max-width: 700px;
-  background: rgba(0, 0, 0, 0.6);
+/* Productos */
+#productos {
   padding: 2rem;
-  border-radius: 12px;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: #ff4081;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #e73370;
-}
-
-/* ====== Productos ====== */
-.productos {
-  padding: 3rem 2rem;
-  background: #fff;
-}
-
-.productos h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #111;
-}
-
-.producto-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .producto {
-  background: #fafafa;
-  border-radius: 10px;
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+}
+
+.producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.producto h3 {
+  margin: 0.5rem;
+}
+
+.producto p {
+  margin: 0.5rem;
+  color: #ff3366;
+  font-weight: bold;
+}
+
+.producto button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background: #ff3366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.producto button:hover {
+  background: #cc0055;
 }
 
 .producto:hover {
   transform: translateY(-5px);
 }
 
-.producto img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.producto h3 {
-  font-size: 1.3rem;
-  margin: 1rem 0;
-}
-
-.producto p {
-  font-size: 1.1rem;
-  color: #ff4081;
-  font-weight: bold;
-}
-
-.producto button {
-  background: #111;
-  color: #fff;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  margin: 1rem 0;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.producto button:hover {
-  background: #ff4081;
-}
-
-/* ====== Ofertas ====== */
-.ofertas {
-  padding: 3rem 2rem;
-  background: #f0f0f0;
-  text-align: center;
-}
-
-.ofertas h2 {
-  margin-bottom: 1rem;
-}
-
-.ofertas p {
-  margin-bottom: 1.5rem;
-}
-
-/* ====== Contacto ====== */
-.contacto {
-  padding: 3rem 2rem;
-  background: #fff;
-}
-
-.contacto h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.contacto form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.contacto input, 
-.contacto textarea {
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.contacto button {
-  background: #ff4081;
-  color: #fff;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.contacto button:hover {
-  background: #e73370;
-}
-
-/* ====== Footer ====== */
+/* Footer */
 footer {
-  background: #111;
-  color: #fff;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
   padding: 1rem;
+  text-align: center;
 }
