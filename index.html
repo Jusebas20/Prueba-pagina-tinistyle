@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToughStyle - Ropa de Gym</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToughStyle - Ropa de Gym</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>ToughStyle</h1>
-  <button id="verCarrito">🛒 Carrito (<span id="contador">0</span>)</button>
-</header>
+    <header>
+        <div class="logo-container">
+            <img src="logo-pagina.jpg" alt="Logo ToughStyle" class="logo">
+            <h1>ToughStyle</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-  <section class="product-grid">
-    <div class="product-card">
-      <img src="https://via.placeholder.com/250x250.png?text=Leggings+Gym" alt="Leggings">
-      <h3>Leggings Deportivos</h3>
-      <p>Comodidad y estilo para tus entrenamientos.</p>
-      <div class="price">$80.000 COP</div>
-      <button onclick="agregarAlCarrito('Leggings Deportivos', 80000)">Agregar</button>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/250x250.png?text=Top+Gym" alt="Top">
-      <h3>Top Deportivo</h3>
-      <p>Ligero, transpirable y resistente.</p>
-      <div class="price">$50.000 COP</div>
-      <button onclick="agregarAlCarrito('Top Deportivo', 50000)">Agregar</button>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/250x250.png?text=Sudadera+Gym" alt="Sudadera">
-      <h3>Sudadera ToughStyle</h3>
-      <
+    <section id="productos" class="section">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="https://via.placeholder.com/200" alt="Camiseta deportiva">
+                <h3>Camiseta deportiva</h3>
+                <p>$50,000 COP</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/200" alt="Pantalón deportivo">
+                <h3>Pantalón deportivo</h3>
+                <p>$80,000 COP</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/200" alt="Guantes de entrenamiento">
+                <h3>Guantes de entrenamiento</h3>
+                <p>$40,000 COP</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="ofertas" class="section">
+        <h2>Ofertas Especiales</h2>
+        <p>Aprovecha nuestros descuentos exclusivos por tiempo limitado.</p>
+    </section>
+
+    <section id="contacto" class="section">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ToughStyle. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
