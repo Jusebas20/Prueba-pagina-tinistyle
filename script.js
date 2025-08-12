@@ -1,43 +1,55 @@
-// Mensaje de bienvenida en consola
-console.log("Bienvenido a ToughStyle 🏋️‍♂️");
+// Script principal de ToughStyle - Tienda de Ropa de GYM
 
-// Función para manejar el botón de compra
-function comprarProducto(nombre, precio) {
-    Swal.fire({
-        title: '¡Producto añadido al carrito!',
-        html: `<strong>${nombre}</strong><br>Precio: ${precio} COP`,
-        icon: 'success',
-        confirmButtonText: 'OK',
-        confirmButtonColor: '#ff4081',
-        background: '#fff',
-        color: '#333'
-    });
-}
-
-// Listener para todos los botones de compra
 document.addEventListener("DOMContentLoaded", () => {
-    const botones = document.querySelectorAll(".producto button");
-    botones.forEach(boton => {
-        boton.addEventListener("click", () => {
-            const producto = boton.parentElement;
-            const nombre = producto.querySelector("h3").textContent;
-            const precio = producto.querySelector("p").textContent;
-            comprarProducto(nombre, precio);
-        });
-    });
-});
 
-// Envío del formulario de contacto
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-    form.addEventListener("submit", (e) => {
+  // -------------------------------
+  // FUNCIÓN: Agregar productos al carrito
+  // -------------------------------
+  const botonesCompra = document.querySelectorAll(".producto button");
+
+  botonesCompra.forEach(boton => {
+    boton.addEventListener("click", () => {
+      alert("🛒 Producto añadido al carrito con éxito");
+    });
+  });
+
+  // -------------------------------
+  // FUNCIÓN: Scroll suave en los enlaces del menú
+  // -------------------------------
+  document.querySelectorAll('nav ul li a').forEach(enlace => {
+    enlace.addEventListener("click", function (e) {
+      if (this.getAttribute("href").startsWith("#")) {
         e.preventDefault();
-        Swal.fire({
-            title: '¡Mensaje enviado!',
-            text: 'Nos pondremos en contacto contigo pronto.',
-            icon: 'success',
-            confirmButtonColor: '#ff4081'
-        });
-        form.reset();
+        const seccion = document.querySelector(this.getAttribute("href"));
+        if (seccion) {
+          window.scrollTo({
+            top: seccion.offsetTop - 60,
+            behavior: "smooth"
+          });
+        }
+      }
     });
+  });
+
+  // -------------------------------
+  // FUNCIÓN: Mostrar el año actual en el footer
+  // -------------------------------
+  const footer = document.querySelector("footer");
+  if (footer) {
+    const year = new Date().getFullYear();
+    footer.innerHTML += `<br><small>© ${year} ToughStyle. Todos los derechos reservados.</small>`;
+  }
+
+  // -------------------------------
+  // FUNCIÓN EXTRA: Efecto hover dinámico en productos
+  // -------------------------------
+  document.querySelectorAll(".producto").forEach(producto => {
+    producto.addEventListener("mouseenter", () => {
+      producto.style.boxShadow = "0 6px 15px rgba(0,0,0,0.25)";
+    });
+    producto.addEventListener("mouseleave", () => {
+      producto.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+    });
+  });
+
 });
